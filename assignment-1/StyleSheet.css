@@ -1,0 +1,10 @@
+body {
+    background: #E4F1FE;
+}
+
+form {
+    width: 400px;
+    margin: 200px auto 0 auto;
+    background: white;
+    padding: 40px 5px;
+}
