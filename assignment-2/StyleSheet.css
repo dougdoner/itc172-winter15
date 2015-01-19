@@ -1,0 +1,12 @@
+body {
+    background: aliceblue;
+}
+
+div.form {
+    width: 300px;
+    margin: 100px auto 100px auto;
+}
+
+table, th, td {
+    padding: 10px;
+}
