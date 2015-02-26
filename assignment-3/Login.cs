@@ -23,12 +23,15 @@ public class Login
 
     private void getFanDetails()
     {
+    	//instantiates new showtracker entity database model
         ShowTrackerEntities1 db = new ShowTrackerEntities1();
 
+	//LINQ notation select statement from fanLogin table
         var details = from f in db.FanLogins
                       where f.FanLoginUserName.Equals(userName)
                       select new { f.FanLoginKey, f.FanLoginHashed, f.FanLoginRandom };
 
+	//assigns the selected login info to the private fields of Login
         foreach (var d in details)
         {
             seed = d.FanLoginRandom;
@@ -37,12 +40,14 @@ public class Login
         }
     }
 
+    //generates a new hash based on user input on the login screen
     private void genHash()
     {
         PasswordHash hash = new PasswordHash();
         compareHash = hash.HashIt(passWord, seed.ToString());
     }
-
+    
+    //compares the difference in byte array hashes, and if there is a match returns boolean true. Otherwise false
     private bool hashCompare()
     {
         bool loginGood = false;
@@ -57,6 +62,8 @@ public class Login
         return loginGood;
     }
 
+    //gets user details based on username input, generates a new hash from the input, and compares the hash of the input and the selected username
+    //if result returns true, the Primary key is retruned (eventually stored in a session variable)
     public int validateLogin()
     {
         getFanDetails();
