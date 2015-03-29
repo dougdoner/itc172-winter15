@@ -1,0 +1,38 @@
+body, body * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 20px;
+    background-color: aliceblue;
+}
+
+form {
+    max-width: 940px;
+    margin: 0 auto;
+    background-color: lemonchiffon;
+    padding: 10px;
+    border: 2px solid green;
+    border-radius: 4px;
+}
+
+select {
+    margin-bottom: 10px;
+}
+
+table, th, tr, td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+th {
+    background-color: darkblue;
+    color: white;
+}
+
+tr:nth-child(odd) {
+    background: grey;
+}
